@@ -19,7 +19,7 @@
 			"net.hothlica.writhe.Writhe"
 		],
 		"fabric-datagen": [
-			"net.hothlica.writhe.WritheDataGenerator"
+			"net.hothlica.writhe.datagen.WritheDataGenerator"
 		],
 		"client": [
 			"net.hothlica.writhe.WritheClient"

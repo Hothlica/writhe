@@ -26,10 +26,10 @@ public class ModItems {
     //INITIALIZE ITEMS HERE
     public static Item BERRYSHARD = register("berryshard", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(3).saturationModifier(50.0f).snack().build())));
+    public static Item STEPPING_STONE = register("stepping_stone", new Item(new Item.Settings()));
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, WRITHE_GROUP_KEY, WRITHE_GROUP);
-
     }
 
     public static Item registerBlockItem(Block block) {
