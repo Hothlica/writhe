@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "writhe:block/wreathen_vines_plant"
+    },
+    "berries=true": {
+      "model": "writhe:block/wreathen_vines_plant_lit"
+    }
+  }
+}

@@ -3,6 +3,7 @@ package net.hothlica.writhe.registry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hothlica.writhe.Writhe;
 
+import net.hothlica.writhe.block.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.block.*;
@@ -13,6 +14,10 @@ public class ModBlocks {
 
     //Register blocks here
     public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)));
+
+    //plants
+    public static Block WREATHEN_VINES = registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(FabricBlockSettings.copyOf(Blocks.CAVE_VINES)));
+    public static Block WREATHEN_VINES_PLANT = registerWithoutItem("wreathen_vines_plant", new WreathenVinesBodyBlock(FabricBlockSettings.copyOf(Blocks.CAVE_VINES_PLANT)));
 
     //Initialize and register methods
     public static void init(){}
