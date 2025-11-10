@@ -19,13 +19,13 @@ public class SteppingStoneItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
         user.getItemCooldownManager().set(this, 30);
         if (!world.isClient) {
-            Vec3d look = user.getRotationVec(1.0F);
+            Vec3d look = user.getRotationVec(1.0f);
             //set y velocity to 0 if going down
             Vec3d currVel = user.getVelocity();
             if (currVel.y < 0) {
                 user.setVelocity(currVel.x, 0, currVel.z);
             }
-            user.addVelocity(look.x, 1, look.z);
+            user.addVelocity(look.x * 0.9, 0.6, look.z * 0.9);
             user.velocityModified = true;
 
         }
