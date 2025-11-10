@@ -4,6 +4,7 @@ import net.hothlica.writhe.Writhe;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.hothlica.writhe.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -24,9 +25,9 @@ public class ModItems {
             .build();
 
     //INITIALIZE ITEMS HERE
-    public static Item BERRYSHARD = register("berryshard", new AliasedBlockItem(ModBlocks.WREATHEN_VINES, new Item.Settings()
+    public static Item BERRYSHARD = register("berryshard", new BerryshardItem(ModBlocks.WREATHEN_VINES, new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(3).saturationModifier(25.0f).snack().build())));
-    public static Item STEPPING_STONE = register("stepping_stone", new Item(new Item.Settings()));
+    public static Item STEPPING_STONE = register("stepping_stone", new SteppingStoneItem(new Item.Settings()));
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, WRITHE_GROUP_KEY, WRITHE_GROUP);
