@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "writhe:soulstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "writhe:soulstone_stairs"
+  }
+}

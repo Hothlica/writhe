@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_packed_snow_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "writhe:soulstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "writhe:soulstone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_packed_snow_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "writhe:soulstone_slab"
+    ]
+  }
+}

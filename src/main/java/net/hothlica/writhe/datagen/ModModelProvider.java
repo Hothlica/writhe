@@ -6,7 +6,6 @@ import net.hothlica.writhe.Writhe;
 import net.hothlica.writhe.registry.ModBlocks;
 import net.hothlica.writhe.registry.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -20,7 +19,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //Write here to generate all-same-sided blocks and other things
+        //Write here to generate one-textured blocks and other things
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOULSTONE)
+                .stairs(ModBlocks.SOULSTONE_STAIRS)
+                .slab(ModBlocks.SOULSTONE_SLAB)
+                .wall(ModBlocks.SOULSTONE_WALL);
 
         registerFruitVines(blockStateModelGenerator, ModBlocks.WREATHEN_VINES, ModBlocks.WREATHEN_VINES_PLANT);
 

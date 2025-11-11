@@ -1,5 +1,9 @@
 {
   "values": [
+    "writhe:soulstone",
+    "writhe:soulstone_stairs",
+    "writhe:soulstone_slab",
+    "writhe:soulstone_wall",
     "writhe:putrescent_netherrack"
   ]
 }

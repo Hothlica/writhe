@@ -18,7 +18,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         //Mineable via tool
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+            .add(ModBlocks.SOULSTONE)
+            .add(ModBlocks.SOULSTONE_STAIRS)
+            .add(ModBlocks.SOULSTONE_SLAB)
+            .add(ModBlocks.SOULSTONE_WALL)
             .add(ModBlocks.PUTRESCENT_NETHERRACK);
 
+        getOrCreateTagBuilder(BlockTags.STAIRS)
+            .add(ModBlocks.SOULSTONE_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.SLABS)
+                .add(ModBlocks.SOULSTONE_SLAB);
+
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.SOULSTONE_WALL);
     }
 }

@@ -26,7 +26,7 @@ public class ModItems {
 
     //INITIALIZE ITEMS HERE
     public static Item BERRYSHARD = register("berryshard", new BerryshardItem(ModBlocks.WREATHEN_VINES, new Item.Settings()
-            .food(new FoodComponent.Builder().nutrition(1).saturationModifier(18.0f).build())));
+            .food(new FoodComponent.Builder().nutrition(1).saturationModifier(25.0f).build())));
     public static Item STEPPING_STONE = register("stepping_stone", new SteppingStoneItem(new Item.Settings()));
 
     public static void init() {

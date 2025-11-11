@@ -5,6 +5,10 @@
   "item.writhe.stepping_stone": "Stepping Stone",
 
   "block.writhe.putrescent_netherrack": "Putrescent Netherrack",
+  "block.writhe.soulstone": "Soulstone",
+  "block.writhe.soulstone_stairs": "Soulstone Stairs",
+  "block.writhe.soulstone_slab": "Soulstone Slab",
+  "block.writhe.soulstone_wall": "Soulstone Wall",
   "block.writhe.wreathen_vines": "Wreathen Vines",
   "block.writhe.wreathen_vines_plant": "Wreathen Vines"
 }

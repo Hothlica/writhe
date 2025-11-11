@@ -24,7 +24,10 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         //will drop itself
-        //addDrop(ModBlocks.);
+        addDrop(ModBlocks.SOULSTONE);
+        addDrop(ModBlocks.SOULSTONE_STAIRS);
+        addDrop(ModBlocks.SOULSTONE_SLAB);
+        addDrop(ModBlocks.SOULSTONE_WALL);
 
         //With silk touch vs without silktouch & NOT an ore
         addDrop(ModBlocks.PUTRESCENT_NETHERRACK, drops(ModBlocks.PUTRESCENT_NETHERRACK, Blocks.NETHERRACK));

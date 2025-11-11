@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "writhe:block/soulstone",
+    "side": "writhe:block/soulstone",
+    "top": "writhe:block/soulstone"
+  }
+}
