@@ -1,0 +1,8 @@
+{
+  "stepping_stone_use": {
+    "subtitle": "subtitles.writhe.stepping_stone_use",
+    "sounds": [
+      "minecraft:block/conduit/deactivate"
+    ]
+  }
+}

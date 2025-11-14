@@ -10,5 +10,7 @@
   "block.writhe.soulstone_slab": "Soulstone Slab",
   "block.writhe.soulstone_wall": "Soulstone Wall",
   "block.writhe.wreathen_vines": "Wreathen Vines",
-  "block.writhe.wreathen_vines_plant": "Wreathen Vines"
+  "block.writhe.wreathen_vines_plant": "Wreathen Vines",
+
+  "subtitles.writhe.stepping_stone_use": "Stepping Stone used"
 }

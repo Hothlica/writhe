@@ -1,9 +1,10 @@
 package net.hothlica.writhe.item;
 
+import net.hothlica.writhe.registry.ModSounds;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
@@ -17,6 +18,7 @@ public class SteppingStoneItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.STEPPING_STONE_USE, SoundCategory.NEUTRAL,0.8f,0.5f);
         if (user.isFallFlying()) return TypedActionResult.fail(itemStack);
         user.getItemCooldownManager().set(this, 30);
         if (!world.isClient && !user.getAbilities().flying) {
@@ -32,7 +34,6 @@ public class SteppingStoneItem extends Item {
             user.addVelocity(look.x * (0.9 + addVel), 0.6, look.z * (0.9 + addVel));
             user.velocityModified = true;
         }
-        user.playSound(SoundEvents.BLOCK_CONDUIT_DEACTIVATE, 0.8f,-1f);
         itemStack.decrementUnlessCreative(1, user);
         return TypedActionResult.success(itemStack, world.isClient());
     }
