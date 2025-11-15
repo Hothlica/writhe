@@ -12,5 +12,9 @@
   "block.writhe.wreathen_vines": "Wreathen Vines",
   "block.writhe.wreathen_vines_plant": "Wreathen Vines",
 
-  "subtitles.writhe.stepping_stone_use": "Stepping Stone used"
+  "subtitles.writhe.stepping_stone_use": "Stepping Stone used",
+
+  "effect.writhe.rot": "Rot",
+
+  "death.attack.rot": "%1$s rotted away"
 }

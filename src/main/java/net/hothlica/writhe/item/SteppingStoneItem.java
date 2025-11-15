@@ -29,7 +29,7 @@ public class SteppingStoneItem extends Item {
             double addVel = 0;
             if (currVel.y < 0) {
                 user.setVelocity(currVel.x, 0, currVel.z);
-                addVel = Math.log(Math.abs(currVel.y) + 1) * 1.5;
+                addVel = Math.log(1 - currVel.y) * 1.5;
             }
             user.addVelocity(look.x * (0.9 + addVel), 0.6, look.z * (0.9 + addVel));
             user.velocityModified = true;

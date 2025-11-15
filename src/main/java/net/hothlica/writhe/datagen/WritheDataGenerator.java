@@ -10,6 +10,7 @@ public class WritheDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModBlockTagProvider::new);
 		//pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModDamageTypeProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
