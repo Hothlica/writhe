@@ -3,7 +3,8 @@
 	"package": "net.hothlica.writhe.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"LivingEntityMixin"
+		"LivingEntityMixin",
+		"HoneyBottleItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
