@@ -19,24 +19,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin implements Rot {
+public abstract class LivingEntityMixin implements Rot
+{
 
     @Shadow public abstract boolean hasStatusEffect(RegistryEntry<StatusEffect> effect);
 
     @Unique private int rotTicks;
     @Unique private DamageSource damageSourceLook;
 
-    public int getRotTicks(){return rotTicks;}
-
-    @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
-    private void saveEffectsToNbt(NbtCompound nbt, CallbackInfo ci) {
-        nbt.putInt("rotTicks", rotTicks);
-    }
-
-    @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
-    private void readEffectsFromNbt(NbtCompound nbt, CallbackInfo ci) {
-        rotTicks = nbt.getInt("rotTicks");
-    }
+    @Unique public int writhe$getRotTicks(){return rotTicks;}
 
     @Inject(method = "tickStatusEffects", at = @At("TAIL"))
     private void tickRot(CallbackInfo ci) {

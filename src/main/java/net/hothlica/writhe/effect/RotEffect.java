@@ -21,12 +21,12 @@ public class RotEffect extends StatusEffect {
             reduceRotTIme(entity, 3);
         }
         if (entity instanceof Rot rot) {
-            int rotTicks = rot.getRotTicks();
+            int rotTicks = rot.writhe$getRotTicks();
             //Original equation: sin(x^2 / 4000) NOTE: equation gets too fast later on, but that's not a problem yet
-            double timer = 4000.0 - (amplifier * 15);
-            double halfTimer = timer / 2;
-            double prevDerivative = ((rotTicks - 1) / halfTimer) * Math.cos(((rotTicks - 1) * (rotTicks - 1)) / timer);
-            double currDerivative = (rotTicks / halfTimer) * Math.cos((rotTicks * rotTicks) / timer);
+            float timer = 4000.0f - (amplifier * 15);
+            float halfTimer = timer / 2;
+            float prevDerivative = (float) (((rotTicks - 1) / halfTimer) * Math.cos(((rotTicks - 1) * (rotTicks - 1)) / timer));
+            float currDerivative = (float) ((rotTicks / halfTimer) * Math.cos((rotTicks * rotTicks) / timer));
             if (prevDerivative > 0 && currDerivative <= 0) {
                 entity.damage(ModDamageTypes.create(entity, ModDamageTypes.ROT), 1.0f);
             }

@@ -1,5 +1,5 @@
 package net.hothlica.writhe.entity.access;
 
 public interface Rot {
-    int getRotTicks();
+    int writhe$getRotTicks();
 }
