@@ -2,6 +2,7 @@ package net.hothlica.writhe.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.hothlica.writhe.Writhe;
 import net.hothlica.writhe.entity.access.Rot;
 import net.hothlica.writhe.registry.ModEffects;
 import net.hothlica.writhe.registry.ModTags;
@@ -31,18 +32,29 @@ public abstract class LivingEntityMixin implements Rot
 
     @Inject(method = "tickStatusEffects", at = @At("TAIL"))
     private void tickRot(CallbackInfo ci) {
-        if (this.hasStatusEffect(ModEffects.ROT)) {rotTicks++;}
-        else {rotTicks = 0;}
+        if (this.hasStatusEffect(ModEffects.ROT)) this.rotTicks++;
+        else this.rotTicks = 0;
+    }
+
+    @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
+    private void writeRot(NbtCompound nbt, CallbackInfo ci) {
+        nbt.putInt(Writhe.MOD_ID + "_RotTicks", this.rotTicks);
+    }
+
+    @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
+    private void readRot(NbtCompound nbt, CallbackInfo ci) {
+        if (nbt.contains(Writhe.MOD_ID + "_RotTicks"))
+            this.rotTicks = nbt.getInt(Writhe.MOD_ID + "_RotTicks");
     }
 
     @Inject(method = "modifyAppliedDamage", at = @At("HEAD"))
     private void damageSourceGet(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
-        damageSourceLook = source;
+        this.damageSourceLook = source;
     }
 
     @WrapOperation(method = "modifyAppliedDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/DamageUtil;getInflictedDamage(FF)F"))
     private float halfProtEffectiveness(float amount, float k, Operation<Float> original) {
-        if (damageSourceLook.isIn(ModTags.DamageTypes.HALF_BYPASSES_ENCHANTMENTS)) {
+        if (this.damageSourceLook.isIn(ModTags.DamageTypes.HALF_BYPASSES_ENCHANTMENTS)) {
             float withProt = original.call(amount, k);
             return amount - ((amount - withProt) / 2.0f);
         }
