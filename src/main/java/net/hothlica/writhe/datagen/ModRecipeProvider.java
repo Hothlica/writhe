@@ -57,6 +57,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_polished_soulstone", conditionsFromItem(ModBlocks.POLISHED_SOULSTONE))
                 .offerTo(consumer);
 
+        offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_SOULSTONE, ModBlocks.SOULSTONE);
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_PILLAR, ModBlocks.SOULSTONE);
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_STAIRS, ModBlocks.SOULSTONE);
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_SLAB, ModBlocks.SOULSTONE, 2);

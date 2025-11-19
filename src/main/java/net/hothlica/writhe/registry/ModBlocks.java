@@ -7,6 +7,8 @@ import net.hothlica.writhe.block.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.block.*;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 
 
 public class ModBlocks {
@@ -31,7 +33,8 @@ public class ModBlocks {
     public static Block POLISHED_SOULSTONE_PILLAR = register("polished_soulstone_pillar", new OrientablePillarBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
 
     // Other natural blocks
-    public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)));
+    public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)
+            .sounds(new BlockSoundGroup(1.0f, 1.0f, SoundEvents.BLOCK_NYLIUM_BREAK, SoundEvents.BLOCK_HONEY_BLOCK_STEP, SoundEvents.BLOCK_NYLIUM_PLACE, SoundEvents.BLOCK_NYLIUM_HIT, SoundEvents.BLOCK_NYLIUM_FALL))));
 
     // Common plants
     public static Block WREATHEN_VINES = registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(FabricBlockSettings.copyOf(Blocks.CAVE_VINES)));
