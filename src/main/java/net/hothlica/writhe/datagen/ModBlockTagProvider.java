@@ -27,7 +27,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.POLISHED_SOULSTONE_SLAB)
             .add(ModBlocks.POLISHED_SOULSTONE_WALL)
             .add(ModBlocks.POLISHED_SOULSTONE_PILLAR)
-            .add(ModBlocks.CHISELED_SOULSTONE);
+            .add(ModBlocks.CHISELED_SOULSTONE)
+            .add(ModBlocks.SMOOTH_SOULSTONE)
+            .add(ModBlocks.SMOOTH_SOULSTONE_SLAB);
 
         //Mineable via tool
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
@@ -40,7 +42,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.SLABS)
             .add(ModBlocks.SOULSTONE_SLAB)
-            .add(ModBlocks.POLISHED_SOULSTONE_SLAB);
+            .add(ModBlocks.POLISHED_SOULSTONE_SLAB)
+            .add(ModBlocks.SMOOTH_SOULSTONE_SLAB);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
             .add(ModBlocks.SOULSTONE_WALL)

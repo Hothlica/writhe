@@ -31,6 +31,8 @@ public class ModBlocks {
 
     // Other soulstone variants
     public static Block CHISELED_SOULSTONE = register("chiseled_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SMOOTH_SOULSTONE = register("smooth_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SMOOTH_SOULSTONE_SLAB = register("smooth_soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
 
     // Other natural blocks
     public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)

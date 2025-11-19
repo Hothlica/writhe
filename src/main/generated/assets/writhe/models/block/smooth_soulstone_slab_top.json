@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "writhe:block/smooth_soulstone",
+    "side": "writhe:block/smooth_soulstone_slab",
+    "top": "writhe:block/smooth_soulstone"
+  }
+}

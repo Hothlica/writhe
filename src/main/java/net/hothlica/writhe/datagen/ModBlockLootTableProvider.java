@@ -37,6 +37,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.POLISHED_SOULSTONE_PILLAR);
 
         addDrop(ModBlocks.CHISELED_SOULSTONE);
+        addDrop(ModBlocks.SMOOTH_SOULSTONE);
+        addDrop(ModBlocks.SMOOTH_SOULSTONE_SLAB);
 
         //With silk touch vs without silktouch & NOT an ore
         addDrop(ModBlocks.PUTRESCENT_NETHERRACK, drops(ModBlocks.PUTRESCENT_NETHERRACK, Blocks.NETHERRACK));

@@ -11,6 +11,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -30,6 +31,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(consumer);
 
         // Soulstone
+        offerSmelting(consumer, List.of(ModBlocks.SOULSTONE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_SOULSTONE, 0.1f, 200, "minecraft:smelting");
         offerPolishedStoneRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_SOULSTONE, ModBlocks.SOULSTONE);
         offerMosaicRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_PILLAR, ModBlocks.SOULSTONE_SLAB);
 
@@ -62,6 +64,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_STAIRS, ModBlocks.SOULSTONE);
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_SLAB, ModBlocks.SOULSTONE, 2);
         offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOULSTONE_WALL, ModBlocks.SOULSTONE);
+
+        offerStonecuttingRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_SOULSTONE_SLAB, ModBlocks.SMOOTH_SOULSTONE, 2);
 
         Block[] soulstoneBlocks = {ModBlocks.SOULSTONE, ModBlocks.POLISHED_SOULSTONE};
         for (Block block : soulstoneBlocks) {

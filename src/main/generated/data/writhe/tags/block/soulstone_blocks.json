@@ -10,6 +10,8 @@
     "writhe:polished_soulstone_slab",
     "writhe:polished_soulstone_wall",
     "writhe:polished_soulstone_pillar",
-    "writhe:chiseled_soulstone"
+    "writhe:chiseled_soulstone",
+    "writhe:smooth_soulstone",
+    "writhe:smooth_soulstone_slab"
   ]
 }

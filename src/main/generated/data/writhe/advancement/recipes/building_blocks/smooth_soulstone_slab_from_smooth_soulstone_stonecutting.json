@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_smooth_soulstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "writhe:smooth_soulstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "writhe:smooth_soulstone_slab_from_smooth_soulstone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_smooth_soulstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "writhe:smooth_soulstone_slab_from_smooth_soulstone_stonecutting"
+    ]
+  }
+}
