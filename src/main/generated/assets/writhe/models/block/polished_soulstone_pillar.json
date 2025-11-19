@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "writhe:block/polished_soulstone_pillar_top",
+    "side": "writhe:block/polished_soulstone_pillar"
+  }
+}

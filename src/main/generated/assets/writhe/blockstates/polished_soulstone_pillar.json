@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "writhe:block/polished_soulstone_pillar_mirrored",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "writhe:block/polished_soulstone_pillar_mirrored",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "writhe:block/polished_soulstone_pillar_mirrored",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "writhe:block/polished_soulstone_pillar",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "writhe:block/polished_soulstone_pillar"
+    },
+    "facing=west": {
+      "model": "writhe:block/polished_soulstone_pillar",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

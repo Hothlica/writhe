@@ -19,6 +19,18 @@ public class ModBlocks {
     public static Block SOULSTONE_SLAB = register("soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
     public static Block SOULSTONE_WALL = register("soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
 
+    // Polished Soulstone
+    public static Block POLISHED_SOULSTONE = register("polished_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block POLISHED_SOULSTONE_STAIRS = register("polished_soulstone_stairs", new StairsBlock(ModBlocks.POLISHED_SOULSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block POLISHED_SOULSTONE_SLAB = register("polished_soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block POLISHED_SOULSTONE_WALL = register("polished_soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+
+    // Other soulstone variants
+    public static Block CHISELED_SOULSTONE = register("chiseled_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block SOULSTONE_PILLAR = register("soulstone_pillar", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block POLISHED_SOULSTONE_PILLAR = register("polished_soulstone_pillar", new OrientablePillarBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+
+    // Other natural blocks
     public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)));
 
     // Common plants

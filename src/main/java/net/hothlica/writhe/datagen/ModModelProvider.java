@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 
 import static net.minecraft.data.client.BlockStateModelGenerator.createBooleanModelMap;
 
@@ -20,10 +21,17 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Write here to generate one-textured blocks and other things
+        registerOrientablePillar(blockStateModelGenerator, ModBlocks.POLISHED_SOULSTONE_PILLAR);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SOULSTONE_PILLAR, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_SOULSTONE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOULSTONE)
-                .stairs(ModBlocks.SOULSTONE_STAIRS)
-                .slab(ModBlocks.SOULSTONE_SLAB)
-                .wall(ModBlocks.SOULSTONE_WALL);
+            .stairs(ModBlocks.SOULSTONE_STAIRS)
+            .slab(ModBlocks.SOULSTONE_SLAB)
+            .wall(ModBlocks.SOULSTONE_WALL);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_SOULSTONE)
+            .stairs(ModBlocks.POLISHED_SOULSTONE_STAIRS)
+            .slab(ModBlocks.POLISHED_SOULSTONE_SLAB)
+            .wall(ModBlocks.POLISHED_SOULSTONE_WALL);
 
         registerFruitVines(blockStateModelGenerator, ModBlocks.WREATHEN_VINES, ModBlocks.WREATHEN_VINES_PLANT);
 
@@ -49,5 +57,34 @@ public class ModModelProvider extends FabricModelProvider {
         g.blockStateCollector.accept(VariantsBlockStateSupplier.create(body).coordinate(createBooleanModelMap(Properties.BERRIES, idLitBody, idDarkBody)));
         //stops body from being registered as an item
         g.excludeFromSimpleItemModelGeneration(body);
+    }
+
+    private void registerOrientablePillar(BlockStateModelGenerator g, Block block) {
+        TextureMap mirrorTextureMap = new TextureMap()
+            .put(TextureKey.END, TextureMap.getSubId(block, "_top"))
+            .put(TextureKey.SIDE, TextureMap.getSubId(block, ""));
+        Identifier modelId = TexturedModel.END_FOR_TOP_CUBE_COLUMN.upload(block, g.modelCollector);
+        Identifier mirrorModelId = Models.CUBE_COLUMN_MIRRORED.upload(block, mirrorTextureMap, g.modelCollector);
+        g.blockStateCollector.accept( VariantsBlockStateSupplier.create(block).coordinate(
+            BlockStateVariantMap.create(Properties.FACING)
+                .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, mirrorModelId).put(VariantSettings.X, VariantSettings.Rotation.R180))
+                .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+                .register(Direction.NORTH, BlockStateVariant.create()
+                    .put(VariantSettings.MODEL, mirrorModelId)
+                    .put(VariantSettings.X, VariantSettings.Rotation.R90))
+                .register(Direction.EAST, BlockStateVariant.create()
+                    .put(VariantSettings.MODEL, mirrorModelId)
+                    .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                    .put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                .register(Direction.SOUTH, BlockStateVariant.create()
+                    .put(VariantSettings.MODEL, modelId)
+                    .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                    .put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                .register(Direction.WEST, BlockStateVariant.create()
+                    .put(VariantSettings.MODEL, modelId)
+                    .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                    .put(VariantSettings.Y, VariantSettings.Rotation.R270))
+            )
+        );
     }
 }

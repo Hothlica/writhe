@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_soulstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "writhe:polished_soulstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "writhe:polished_soulstone_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_soulstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "writhe:polished_soulstone_wall"
+    ]
+  }
+}

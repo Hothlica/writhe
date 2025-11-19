@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "writhe:block/polished_soulstone_slab"
+    },
+    "type=double": {
+      "model": "writhe:block/polished_soulstone"
+    },
+    "type=top": {
+      "model": "writhe:block/polished_soulstone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "writhe:polished_soulstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "writhe:polished_soulstone_pillar"
+  }
+}

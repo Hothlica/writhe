@@ -2,9 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "writhe:soulstone"
-    }
+    "#": [
+      {
+        "item": "writhe:soulstone"
+      },
+      {
+        "item": "writhe:soulstone_pillar"
+      }
+    ]
   },
   "pattern": [
     "#  ",
