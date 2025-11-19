@@ -16,21 +16,21 @@ public class ModBlocks {
     // REGISTER BLOCKS HERE
 
     // Soulstone
-    public static Block SOULSTONE = register("soulstone", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block SOULSTONE_STAIRS = register("soulstone_stairs", new StairsBlock(ModBlocks.SOULSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block SOULSTONE_SLAB = register("soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block SOULSTONE_WALL = register("soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block SOULSTONE = register("soulstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SOULSTONE_STAIRS = register("soulstone_stairs", new StairsBlock(ModBlocks.SOULSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SOULSTONE_SLAB = register("soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SOULSTONE_WALL = register("soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block SOULSTONE_PILLAR = register("soulstone_pillar", new PillarBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
 
     // Polished Soulstone
-    public static Block POLISHED_SOULSTONE = register("polished_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block POLISHED_SOULSTONE_STAIRS = register("polished_soulstone_stairs", new StairsBlock(ModBlocks.POLISHED_SOULSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block POLISHED_SOULSTONE_SLAB = register("polished_soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block POLISHED_SOULSTONE_WALL = register("polished_soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block POLISHED_SOULSTONE = register("polished_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block POLISHED_SOULSTONE_STAIRS = register("polished_soulstone_stairs", new StairsBlock(ModBlocks.POLISHED_SOULSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block POLISHED_SOULSTONE_SLAB = register("polished_soulstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block POLISHED_SOULSTONE_WALL = register("polished_soulstone_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
+    public static Block POLISHED_SOULSTONE_PILLAR = register("polished_soulstone_pillar", new OrientablePillarBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
 
     // Other soulstone variants
-    public static Block CHISELED_SOULSTONE = register("chiseled_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block SOULSTONE_PILLAR = register("soulstone_pillar", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-    public static Block POLISHED_SOULSTONE_PILLAR = register("polished_soulstone_pillar", new OrientablePillarBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+    public static Block CHISELED_SOULSTONE = register("chiseled_soulstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_BASALT)));
 
     // Other natural blocks
     public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.WARPED_NYLIUM)

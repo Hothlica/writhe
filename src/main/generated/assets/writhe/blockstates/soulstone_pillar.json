@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "writhe:block/soulstone_pillar_horizontal",
+      "model": "writhe:block/soulstone_pillar_mirrored",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "writhe:block/soulstone_pillar"
     },
     "axis=z": {
-      "model": "writhe:block/soulstone_pillar_horizontal",
+      "model": "writhe:block/soulstone_pillar_mirrored",
       "x": 90
     }
   }

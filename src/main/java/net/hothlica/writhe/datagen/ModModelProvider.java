@@ -11,6 +11,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
+import static net.minecraft.data.client.BlockStateModelGenerator.createAxisRotatedBlockState;
 import static net.minecraft.data.client.BlockStateModelGenerator.createBooleanModelMap;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -22,7 +23,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Write here to generate one-textured blocks and other things
         registerOrientablePillar(blockStateModelGenerator, ModBlocks.POLISHED_SOULSTONE_PILLAR);
-        blockStateModelGenerator.registerAxisRotated(ModBlocks.SOULSTONE_PILLAR, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        registerMirrorAxisRotated(blockStateModelGenerator, ModBlocks.SOULSTONE_PILLAR, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_SOULSTONE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOULSTONE)
             .stairs(ModBlocks.SOULSTONE_STAIRS)
@@ -86,5 +87,14 @@ public class ModModelProvider extends FabricModelProvider {
                     .put(VariantSettings.Y, VariantSettings.Rotation.R270))
             )
         );
+    }
+
+    private void registerMirrorAxisRotated(BlockStateModelGenerator g, Block block, TexturedModel.Factory verticalModelFactory) {
+        TextureMap mirrorTextureMap = new TextureMap()
+                .put(TextureKey.END, TextureMap.getSubId(block, "_top"))
+                .put(TextureKey.SIDE, TextureMap.getSubId(block, ""));
+        Identifier identifier = verticalModelFactory.upload(block, g.modelCollector);
+        Identifier identifier2 = Models.CUBE_COLUMN_MIRRORED.upload(block, mirrorTextureMap, g.modelCollector);
+        g.blockStateCollector.accept(createAxisRotatedBlockState(block, identifier, identifier2));
     }
 }
