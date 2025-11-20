@@ -26,19 +26,19 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         //will drop itself
         addDrop(ModBlocks.SOULSTONE);
         addDrop(ModBlocks.SOULSTONE_STAIRS);
-        addDrop(ModBlocks.SOULSTONE_SLAB);
+        addDrop(ModBlocks.SOULSTONE_SLAB, slabDrops(ModBlocks.SOULSTONE_SLAB));
         addDrop(ModBlocks.SOULSTONE_WALL);
         addDrop(ModBlocks.SOULSTONE_PILLAR);
 
         addDrop(ModBlocks.POLISHED_SOULSTONE);
         addDrop(ModBlocks.POLISHED_SOULSTONE_STAIRS);
-        addDrop(ModBlocks.POLISHED_SOULSTONE_SLAB);
+        addDrop(ModBlocks.POLISHED_SOULSTONE_SLAB, slabDrops(ModBlocks.POLISHED_SOULSTONE_SLAB));
         addDrop(ModBlocks.POLISHED_SOULSTONE_WALL);
         addDrop(ModBlocks.POLISHED_SOULSTONE_PILLAR);
 
         addDrop(ModBlocks.CHISELED_SOULSTONE);
         addDrop(ModBlocks.SMOOTH_SOULSTONE);
-        addDrop(ModBlocks.SMOOTH_SOULSTONE_SLAB);
+        addDrop(ModBlocks.SMOOTH_SOULSTONE_SLAB, slabDrops(ModBlocks.SMOOTH_SOULSTONE_SLAB));
 
         //With silk touch vs without silktouch & NOT an ore
         addDrop(ModBlocks.PUTRESCENT_NETHERRACK, drops(ModBlocks.PUTRESCENT_NETHERRACK, Blocks.NETHERRACK));
