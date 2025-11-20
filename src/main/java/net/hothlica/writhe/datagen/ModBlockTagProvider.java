@@ -48,5 +48,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WALLS)
             .add(ModBlocks.SOULSTONE_WALL)
             .add(ModBlocks.POLISHED_SOULSTONE_WALL);
+
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+            .add(ModBlocks.WREATHEN_VINES)
+            .add(ModBlocks.WREATHEN_VINES_PLANT);
     }
 }
