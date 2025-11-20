@@ -9,6 +9,7 @@ import net.hothlica.writhe.registry.ModTags;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.entry.RegistryEntry;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,18 +21,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMixin implements Rot
-{
+public abstract class LivingEntityMixin implements Rot {
 
+    //Shadow
     @Shadow public abstract boolean hasStatusEffect(RegistryEntry<StatusEffect> effect);
 
+    //Entity variables/attributes
     @Unique private int rotTicks;
     @Unique private DamageSource damageSourceLook;
 
-    @Unique public int writhe$getRotTicks(){return rotTicks;}
+    //Rot
+    @Override public int writhe$getRotTicks(){return rotTicks;}
 
+    //Mixins
     @Inject(method = "tickStatusEffects", at = @At("TAIL"))
-    private void tickRot(CallbackInfo ci) {
+    private void tickWritheEffects(CallbackInfo ci) {
         if (this.hasStatusEffect(ModEffects.ROT)) this.rotTicks++;
         else this.rotTicks = 0;
     }
@@ -45,6 +49,13 @@ public abstract class LivingEntityMixin implements Rot
     private void readRot(NbtCompound nbt, CallbackInfo ci) {
         if (nbt.contains(Writhe.MOD_ID + "_RotTicks"))
             this.rotTicks = nbt.getInt(Writhe.MOD_ID + "_RotTicks");
+    }
+
+    @Inject(method = "canHaveStatusEffect", at = @At("HEAD"), cancellable = true)
+    private void ataraxiaImmuneAllEffects(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
+        if (this.hasStatusEffect(ModEffects.ATARAXIA)) {
+            cir.setReturnValue(false);
+        }
     }
 
     @Inject(method = "modifyAppliedDamage", at = @At("HEAD"))
