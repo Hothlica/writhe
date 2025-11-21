@@ -19,6 +19,7 @@ public class Writhe implements ModInitializer {
 		ModEffects.init();
 		ModDamageTypes.init();
 		ModTags.init();
+		ModAttachmentTypes.init();
 	}
 
 	public static Identifier id(String path) {

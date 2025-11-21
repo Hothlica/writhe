@@ -3,6 +3,7 @@ package net.hothlica.writhe.client.gui;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.hothlica.writhe.entity.access.Rot;
+import net.hothlica.writhe.registry.ModAttachmentTypes;
 import net.hothlica.writhe.registry.ModEffects;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -20,9 +21,9 @@ public class RotOverlay implements LayeredDrawer.Layer {
     @Override
     public void render(DrawContext context, RenderTickCounter tickCounter){
         MinecraftClient client = MinecraftClient.getInstance();
-        if (client.player.hasStatusEffect(ModEffects.ROT) && client.player instanceof Rot rot) {
+        if (client.player.hasStatusEffect(ModEffects.ROT)) {
             int currDuration = client.player.getStatusEffect(ModEffects.ROT).getDuration();
-            int rotTicks = rot.writhe$getRotTicks();
+            int rotTicks = client.player.getAttachedOrCreate(ModAttachmentTypes.ROT_TICKS);
             float opacity = getOpacity(currDuration, rotTicks, 200, 240);
             renderOverlay(context, opacity);
             //client.player.sendMessage(Text.literal(String.valueOf(opacity)));

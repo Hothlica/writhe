@@ -1,7 +1,7 @@
 package net.hothlica.writhe.effect;
 
-import net.hothlica.writhe.entity.access.Rot;
 import net.hothlica.writhe.registry.ModDamageTypes;
+import net.hothlica.writhe.registry.ModAttachmentTypes;
 import net.hothlica.writhe.registry.ModEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -20,17 +20,16 @@ public class RotEffect extends StatusEffect {
         if (entity.isOnFire()) {
             reduceRotTIme(entity, 3);
         }
-        if (entity instanceof Rot rot) {
-            int rotTicks = rot.writhe$getRotTicks();
-            //Original equation: sin(x^2 / 4000) NOTE: equation gets too fast later on, but that's not a problem yet
-            float timer = 4000.0f - (amplifier * 15);
-            float halfTimer = timer / 2;
-            float prevDerivative = (float) (((rotTicks - 1) / halfTimer) * Math.cos(((rotTicks - 1) * (rotTicks - 1)) / timer));
-            float currDerivative = (float) ((rotTicks / halfTimer) * Math.cos((rotTicks * rotTicks) / timer));
-            if (prevDerivative > 0 && currDerivative <= 0) {
-                entity.damage(ModDamageTypes.create(entity, ModDamageTypes.ROT), 1.0f);
-            }
+        int rotTicks = entity.getAttachedOrCreate(ModAttachmentTypes.ROT_TICKS);
+        //Original equation: sin(x^2 / 4000) NOTE: equation gets too fast later on, but that's not a problem yet
+        float timer = 4000.0f - (amplifier * 15);
+        float halfTimer = timer / 2;
+        float prevDerivative = (float) (((rotTicks - 1) / halfTimer) * Math.cos(((rotTicks - 1) * (rotTicks - 1)) / timer));
+        float currDerivative = (float) ((rotTicks / halfTimer) * Math.cos((rotTicks * rotTicks) / timer));
+        if (prevDerivative > 0 && currDerivative <= 0) {
+            entity.damage(ModDamageTypes.create(entity, ModDamageTypes.ROT), 1.0f);
         }
+        entity.setAttached(ModAttachmentTypes.ROT_TICKS, rotTicks + 1);
         return true;
     }
 
@@ -39,6 +38,7 @@ public class RotEffect extends StatusEffect {
         return true;
     }
 
+
     //Helper method
     public static void reduceRotTIme(LivingEntity user, int reductedTime) {
         StatusEffectInstance instance = user.getStatusEffect(ModEffects.ROT);
@@ -46,5 +46,9 @@ public class RotEffect extends StatusEffect {
         if (!instance.isInfinite()) newDuration = Math.max(0, instance.getDuration() - reductedTime);
         else newDuration = instance.getDuration();
         user.setStatusEffect(new StatusEffectInstance(ModEffects.ROT, newDuration, instance.getAmplifier(), instance.isAmbient(), instance.shouldShowParticles(), instance.shouldShowIcon()), user.getAttacker());
+    }
+
+    public static void onRemoveRot(LivingEntity entity) {
+        entity.setAttached(ModAttachmentTypes.ROT_TICKS, 0);
     }
 }
