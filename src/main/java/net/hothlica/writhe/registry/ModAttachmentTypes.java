@@ -12,9 +12,7 @@ import java.util.function.Consumer;
 
 public class ModAttachmentTypes {
 
-    public static final AttachmentType<Integer> ROT_TICKS = register("rot_ticks", 0, builder -> builder
-            .persistent(Codecs.NONNEGATIVE_INT)
-            .syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.all()));
+    public static final AttachmentType<Integer> ROT_TICKS = register("rot_ticks", 0, builder -> builder.persistent(Codecs.NONNEGATIVE_INT).syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.targetOnly()));
 
     private static <A> AttachmentType<A> register (String id, A defaultData, Consumer<AttachmentRegistry.Builder<A>> consumer) {
         AttachmentRegistry.Builder<A> builder = AttachmentRegistryImpl.builder();

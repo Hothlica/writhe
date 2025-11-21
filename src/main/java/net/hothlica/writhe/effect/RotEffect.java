@@ -38,7 +38,6 @@ public class RotEffect extends StatusEffect {
         return true;
     }
 
-
     //Helper method
     public static void reduceRotTIme(LivingEntity user, int reductedTime) {
         StatusEffectInstance instance = user.getStatusEffect(ModEffects.ROT);
