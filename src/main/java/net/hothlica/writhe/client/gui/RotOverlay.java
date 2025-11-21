@@ -2,14 +2,12 @@ package net.hothlica.writhe.client.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.hothlica.writhe.entity.access.Rot;
 import net.hothlica.writhe.registry.ModAttachmentTypes;
 import net.hothlica.writhe.registry.ModEffects;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.LayeredDrawer;
 import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
