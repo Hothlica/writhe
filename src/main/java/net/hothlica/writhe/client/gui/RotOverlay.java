@@ -37,7 +37,7 @@ public class RotOverlay implements LayeredDrawer.Layer {
             opacity = MathHelper.clamp(opacity, 0.0f, 1.0f);
             context.setShaderColor(0.0f, opacity, 0.0f, 1.0f);
         }
-        else context.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+        else context.setShaderColor(0.0f, 0.0f, 0.0f, 1.0f);
         context.drawTexture(
             VIGNETTE_TEXTURE,
             0, 0, -90, 0.0f, 0.0f,

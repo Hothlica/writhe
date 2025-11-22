@@ -6,6 +6,7 @@ import net.hothlica.writhe.Writhe;
 import net.hothlica.writhe.registry.ModBlocks;
 import net.hothlica.writhe.registry.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -37,6 +38,7 @@ public class ModModelProvider extends FabricModelProvider {
             .wall(ModBlocks.POLISHED_SOULSTONE_WALL);
 
         registerFruitVines(blockStateModelGenerator, ModBlocks.WREATHEN_VINES, ModBlocks.WREATHEN_VINES_PLANT);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GOLDSHROOM, Blocks.POTTED_RED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //block item models for blocks that are not modeled by the datagen
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PUTRESCENT_NETHERRACK, Writhe.id("block/putrescent_netherrack"));

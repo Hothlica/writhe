@@ -15,5 +15,6 @@ public class WritheClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WREATHEN_VINES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WREATHEN_VINES_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GOLDSHROOM, RenderLayer.getCutout());
     }
 }

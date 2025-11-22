@@ -7,6 +7,7 @@ import net.hothlica.writhe.registry.ModBlocks;
 import net.hothlica.writhe.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
@@ -43,8 +44,11 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         //With silk touch vs without silktouch & NOT an ore
         addDrop(ModBlocks.PUTRESCENT_NETHERRACK, drops(ModBlocks.PUTRESCENT_NETHERRACK, Blocks.NETHERRACK));
 
-        addDrop(ModBlocks.WREATHEN_VINES, block -> berryshardDrops(block));
-        addDrop(ModBlocks.WREATHEN_VINES_PLANT, block -> berryshardDrops(block));
+        //With shears vs without shears
+        addDrop(ModBlocks.GOLDSHROOM, dropsWithShears(ModBlocks.GOLDSHROOM, ItemEntry.builder(Items.GOLD_NUGGET)));
+
+        addDrop(ModBlocks.WREATHEN_VINES, this::berryshardDrops);
+        addDrop(ModBlocks.WREATHEN_VINES_PLANT, this::berryshardDrops);
 
 
     }
