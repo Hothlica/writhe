@@ -41,16 +41,18 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SMOOTH_SOULSTONE);
         addDrop(ModBlocks.SMOOTH_SOULSTONE_SLAB, slabDrops(ModBlocks.SMOOTH_SOULSTONE_SLAB));
 
+        addDrop(ModBlocks.GOLDSHROOM);
+
         //With silk touch vs without silktouch & NOT an ore
         addDrop(ModBlocks.PUTRESCENT_NETHERRACK, drops(ModBlocks.PUTRESCENT_NETHERRACK, Blocks.NETHERRACK));
+        addDrop(ModBlocks.GOLDSHROOM_BLOCK, mushroomBlockDrops(ModBlocks.GOLDSHROOM_BLOCK, ModBlocks.GOLDSHROOM));
 
         //With shears vs without shears
-        addDrop(ModBlocks.GOLDSHROOM, dropsWithShears(ModBlocks.GOLDSHROOM, ItemEntry.builder(Items.GOLD_NUGGET)));
+        addDrop(ModBlocks.PUTRESCENT_GRASS, dropsWithShears(ModBlocks.PUTRESCENT_GRASS));
 
+        //Others
         addDrop(ModBlocks.WREATHEN_VINES, this::berryshardDrops);
         addDrop(ModBlocks.WREATHEN_VINES_PLANT, this::berryshardDrops);
-
-
     }
 
     //Custom loot tables

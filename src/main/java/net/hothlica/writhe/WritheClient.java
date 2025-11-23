@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.hothlica.writhe.registry.ModBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 
 @Environment(EnvType.CLIENT)
@@ -12,9 +13,8 @@ public class WritheClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WREATHEN_VINES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WREATHEN_VINES_PLANT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GOLDSHROOM, RenderLayer.getCutout());
+        for (Block block : ModBlocks.BLOCK_CUTOUT) {
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
+        }
     }
 }

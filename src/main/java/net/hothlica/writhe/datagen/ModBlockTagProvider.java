@@ -36,6 +36,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .addTag(ModTags.Blocks.SOULSTONE_BLOCKS)
             .add(ModBlocks.PUTRESCENT_NETHERRACK);
 
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+            .add(ModBlocks.GOLDSHROOM_BLOCK);
+
+        // Building blocks
         getOrCreateTagBuilder(BlockTags.STAIRS)
             .add(ModBlocks.SOULSTONE_STAIRS)
             .add(ModBlocks.POLISHED_SOULSTONE_STAIRS);
@@ -52,5 +56,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
             .add(ModBlocks.WREATHEN_VINES)
             .add(ModBlocks.WREATHEN_VINES_PLANT);
+
+        getOrCreateTagBuilder(BlockTags.NYLIUM)
+            .add(ModBlocks.PUTRESCENT_NETHERRACK);
+
+        //getOrCreateTagBuilder(BlockTags.REPLACEABLE)
     }
 }

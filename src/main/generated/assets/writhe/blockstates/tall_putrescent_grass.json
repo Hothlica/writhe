@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "writhe:block/tall_putrescent_grass_bottom"
+    },
+    "half=upper": {
+      "model": "writhe:block/tall_putrescent_grass_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "writhe:block/goldshroom_block_top",
+    "side": "writhe:block/goldshroom_block_side"
+  }
+}

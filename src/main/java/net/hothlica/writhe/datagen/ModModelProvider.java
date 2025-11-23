@@ -37,8 +37,12 @@ public class ModModelProvider extends FabricModelProvider {
             .slab(ModBlocks.POLISHED_SOULSTONE_SLAB)
             .wall(ModBlocks.POLISHED_SOULSTONE_WALL);
 
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.GOLDSHROOM_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+
         registerFruitVines(blockStateModelGenerator, ModBlocks.WREATHEN_VINES, ModBlocks.WREATHEN_VINES_PLANT);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GOLDSHROOM, Blocks.POTTED_RED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PUTRESCENT_GRASS, Blocks.POTTED_FERN, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.TALL_PUTRESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //block item models for blocks that are not modeled by the datagen
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PUTRESCENT_NETHERRACK, Writhe.id("block/putrescent_netherrack"));

@@ -6,6 +6,7 @@ import net.hothlica.writhe.registry.*;
 import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -29,6 +30,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ItemTags.STONE_CRAFTING_MATERIALS)
                 .criterion("has_berryshard", conditionsFromItem(ModItems.BERRYSHARD))
                 .offerTo(consumer);
+
+        // Goldshroom
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.GOLD_NUGGET, 1).input(ModBlocks.GOLDSHROOM).criterion("has_goldshroom", conditionsFromItem(ModBlocks.GOLDSHROOM)).offerTo(consumer);
 
         // Soulstone
         offerSmelting(consumer, List.of(ModBlocks.SOULSTONE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_SOULSTONE, 0.1f, 200, "minecraft:smelting");

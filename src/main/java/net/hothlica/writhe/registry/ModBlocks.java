@@ -1,6 +1,5 @@
 package net.hothlica.writhe.registry;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hothlica.writhe.Writhe;
 
 import net.hothlica.writhe.block.*;
@@ -12,11 +11,14 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.TreeFeature;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ModBlocks {
-
+    //Transparent block list
+    public static List<Block> BLOCK_CUTOUT = new ArrayList<>();
     // REGISTER BLOCKS HERE
 
     // Soulstone
@@ -39,13 +41,15 @@ public class ModBlocks {
     public static Block SMOOTH_SOULSTONE_SLAB = register("smooth_soulstone_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_BASALT)));
 
     // Other natural blocks
-    public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new Block(AbstractBlock.Settings.copy(Blocks.WARPED_NYLIUM)
-            .sounds(new BlockSoundGroup(1.0f, 1.0f, SoundEvents.BLOCK_NYLIUM_BREAK, SoundEvents.BLOCK_HONEY_BLOCK_STEP, SoundEvents.BLOCK_NYLIUM_PLACE, SoundEvents.BLOCK_NYLIUM_HIT, SoundEvents.BLOCK_NYLIUM_FALL))));
+    public static Block PUTRESCENT_NETHERRACK = register("putrescent_netherrack", new ModNyliumBlock(AbstractBlock.Settings.copy(Blocks.WARPED_NYLIUM).sounds(new BlockSoundGroup(1.0f, 1.0f, SoundEvents.BLOCK_NYLIUM_BREAK, SoundEvents.BLOCK_HONEY_BLOCK_STEP, SoundEvents.BLOCK_NYLIUM_PLACE, SoundEvents.BLOCK_NYLIUM_HIT, SoundEvents.BLOCK_NYLIUM_FALL))));
+    public static Block GOLDSHROOM_BLOCK = register("goldshroom_block", new PillarBlock(AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK).luminance(state -> 8)));
 
     // Common plants
-    public static Block WREATHEN_VINES = registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES)));
-    public static Block WREATHEN_VINES_PLANT = registerWithoutItem("wreathen_vines_plant", new WreathenVinesBodyBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES_PLANT)));
-    public static Block GOLDSHROOM = register("goldshroom", new FungusBlock(RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of("huge_red_mushroom")), PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM)));
+    public static Block WREATHEN_VINES = cutout(registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES))));
+    public static Block WREATHEN_VINES_PLANT = cutout(registerWithoutItem("wreathen_vines_plant", new WreathenVinesBodyBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES_PLANT))));
+    public static Block GOLDSHROOM = cutout(register("goldshroom", new FungusBlock(RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of("huge_red_mushroom")), PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM))));
+    public static Block PUTRESCENT_GRASS = cutout(register("putrescent_grass", new ModShortPlantBlock(AbstractBlock.Settings.copy(Blocks.FERN))));
+    public static Block TALL_PUTRESCENT_GRASS = cutout(register("tall_putrescent_grass", new ModTallPlantBlock(AbstractBlock.Settings.copy(Blocks.LARGE_FERN).luminance(state -> 5))));
 
     // Initialize and register methods
     public static void init(){}
@@ -60,4 +64,8 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, Writhe.id(id), block);
     }
 
+    private static Block cutout(Block block) {
+        BLOCK_CUTOUT.add(block);
+        return block;
+    }
 }
