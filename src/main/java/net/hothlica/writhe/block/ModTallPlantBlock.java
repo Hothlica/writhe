@@ -1,5 +1,6 @@
 package net.hothlica.writhe.block;
 
+import net.hothlica.writhe.registry.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.TallPlantBlock;
@@ -14,6 +15,6 @@ public class ModTallPlantBlock extends TallPlantBlock {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.NYLIUM) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
+        return floor.isIn(BlockTags.NYLIUM) || floor.isOf(ModBlocks.SOULSTONE) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
     }
 }

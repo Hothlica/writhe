@@ -41,7 +41,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         registerFruitVines(blockStateModelGenerator, ModBlocks.WREATHEN_VINES, ModBlocks.WREATHEN_VINES_PLANT);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GOLDSHROOM, Blocks.POTTED_RED_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PUTRESCENT_GRASS, Blocks.POTTED_FERN, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.PUTRESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.TALL_PUTRESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //block item models for blocks that are not modeled by the datagen
