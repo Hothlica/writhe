@@ -41,10 +41,12 @@ public class RotEffect extends StatusEffect {
     //Helper method
     public static void reduceRotTIme(LivingEntity user, int reductedTime) {
         StatusEffectInstance instance = user.getStatusEffect(ModEffects.ROT);
-        int newDuration = 0;
-        if (!instance.isInfinite()) newDuration = Math.max(0, instance.getDuration() - reductedTime);
-        else newDuration = instance.getDuration();
-        user.setStatusEffect(new StatusEffectInstance(ModEffects.ROT, newDuration, instance.getAmplifier(), instance.isAmbient(), instance.shouldShowParticles(), instance.shouldShowIcon()), user.getAttacker());
+        if (instance != null) {
+            int newDuration;
+            if (!instance.isInfinite()) newDuration = Math.max(0, instance.getDuration() - reductedTime);
+            else newDuration = instance.getDuration();
+            user.setStatusEffect(new StatusEffectInstance(ModEffects.ROT, newDuration, instance.getAmplifier(), instance.isAmbient(), instance.shouldShowParticles(), instance.shouldShowIcon()), user.getAttacker());
+        }
     }
 
     public static void onRemoveRot(LivingEntity entity) {

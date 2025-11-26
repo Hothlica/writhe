@@ -43,9 +43,7 @@ public class ModItems {
 
     public static Item register(Identifier id, Item item) {
         Item returnItem = Registry.register(Registries.ITEM, id, item);
-        ItemGroupEvents.modifyEntriesEvent(WRITHE_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(returnItem.getDefaultStack());
-        });
+        ItemGroupEvents.modifyEntriesEvent(WRITHE_GROUP_KEY).register(itemGroup -> itemGroup.add(returnItem.getDefaultStack()));
         return returnItem;
     }
 }

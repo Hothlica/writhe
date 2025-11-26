@@ -19,7 +19,7 @@ public class RotOverlay implements LayeredDrawer.Layer {
     @Override
     public void render(DrawContext context, RenderTickCounter tickCounter){
         MinecraftClient client = MinecraftClient.getInstance();
-        if (client.player.hasStatusEffect(ModEffects.ROT)) {
+        if (client.player != null && client.player.hasStatusEffect(ModEffects.ROT)) {
             int currDuration = client.player.getStatusEffect(ModEffects.ROT).getDuration();
             int rotTicks = client.player.getAttachedOrCreate(ModAttachmentTypes.ROT_TICKS);
             float opacity = getOpacity(currDuration, rotTicks, 200, 240);

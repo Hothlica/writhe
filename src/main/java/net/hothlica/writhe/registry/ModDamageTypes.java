@@ -1,7 +1,6 @@
 package net.hothlica.writhe.registry;
 
 import net.hothlica.writhe.Writhe;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;

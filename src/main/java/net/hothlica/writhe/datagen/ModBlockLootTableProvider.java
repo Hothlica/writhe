@@ -7,7 +7,6 @@ import net.hothlica.writhe.registry.ModBlocks;
 import net.hothlica.writhe.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
