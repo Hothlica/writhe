@@ -10,13 +10,13 @@ import net.minecraft.util.dynamic.Codecs;
 
 import java.util.function.Consumer;
 
+@SuppressWarnings("UnstableApiUsage")
 public class ModAttachmentTypes {
 
-    public static final AttachmentType<Integer> ROT_TICKS = register("rot_ticks", 0, builder -> builder.persistent(Codecs.NONNEGATIVE_INT).syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.targetOnly()));
+    public static final AttachmentType<Integer> ROT_TICKS = register("rot_ticks", builder -> builder.initializer(() -> 0).persistent(Codecs.NONNEGATIVE_INT).syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.targetOnly()));
 
-    private static <A> AttachmentType<A> register (String id, A defaultData, Consumer<AttachmentRegistry.Builder<A>> consumer) {
+    private static <A> AttachmentType<A> register (String id, Consumer<AttachmentRegistry.Builder<A>> consumer) {
         AttachmentRegistry.Builder<A> builder = AttachmentRegistryImpl.builder();
-        builder.initializer(() -> defaultData);
         consumer.accept(builder);
         return builder.buildAndRegister(Writhe.id(id));
     }

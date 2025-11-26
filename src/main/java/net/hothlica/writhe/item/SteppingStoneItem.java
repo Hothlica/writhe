@@ -18,7 +18,7 @@ public class SteppingStoneItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        if (user.isFallFlying()) return TypedActionResult.fail(itemStack);
+        if (user.isFallFlying() || user.hasVehicle()) return TypedActionResult.fail(itemStack);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.STEPPING_STONE_USE, SoundCategory.NEUTRAL,0.8f,0.5f);
         user.getItemCooldownManager().set(this, 30);
         if (!world.isClient && !user.getAbilities().flying) {

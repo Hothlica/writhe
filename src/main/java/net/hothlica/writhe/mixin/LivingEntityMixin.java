@@ -2,6 +2,7 @@ package net.hothlica.writhe.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.hothlica.writhe.effect.AtaraxiaEffect;
 import net.hothlica.writhe.effect.RotEffect;
 import net.hothlica.writhe.registry.ModEffects;
 import net.hothlica.writhe.registry.ModTags;
@@ -37,8 +38,10 @@ public abstract class LivingEntityMixin {
     @Inject(method = "onStatusEffectRemoved", at = @At("HEAD"), cancellable = true)
     private void onStatusEffectRemoved(StatusEffectInstance effect, CallbackInfo ci) {
         if (effect.getEffectType() == ModEffects.ROT) {
-            RotEffect effectType = ((RotEffect) effect.getEffectType().value());
-            effectType.onRemoveRot((LivingEntity) (Object) this);
+            RotEffect.onRemoveRot((LivingEntity) (Object) this);
+        }
+        if (effect.getEffectType() == ModEffects.ATARAXIA) {
+            AtaraxiaEffect.onRemoveAtaraxia((LivingEntity) (Object) this);
         }
     }
 

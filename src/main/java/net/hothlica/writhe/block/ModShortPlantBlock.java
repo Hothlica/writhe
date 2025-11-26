@@ -20,9 +20,9 @@ public class ModShortPlantBlock extends ShortPlantBlock {
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        TallPlantBlock tallPlantBlock = (TallPlantBlock) ModBlocks.TALL_PUTRESCENT_GRASS;
+        ModTallPlantBlock tallPlantBlock = (ModTallPlantBlock) ModBlocks.TALL_PUTRESCENT_GRASS;
         if (tallPlantBlock.getDefaultState().canPlaceAt(world, pos) && world.isAir(pos.up())) {
-            TallPlantBlock.placeAt(world, tallPlantBlock.getDefaultState(), pos, 2);
+            ModTallPlantBlock.placeAt(world, tallPlantBlock.getDefaultState(), pos, 2);
         }
     }
 }
