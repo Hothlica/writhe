@@ -60,6 +60,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NYLIUM)
             .add(ModBlocks.PUTRESCENT_NETHERRACK);
 
+        getOrCreateTagBuilder(BlockTags.MUSHROOM_GROW_BLOCK)
+            .add(ModBlocks.PUTRESCENT_NETHERRACK);
+
         //getOrCreateTagBuilder(BlockTags.REPLACEABLE)
     }
 }

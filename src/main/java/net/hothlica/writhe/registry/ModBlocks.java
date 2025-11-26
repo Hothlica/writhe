@@ -3,14 +3,12 @@ package net.hothlica.writhe.registry;
 import net.hothlica.writhe.Writhe;
 
 import net.hothlica.writhe.block.*;
+import net.hothlica.writhe.world.ModConfiguredFeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.block.*;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +45,7 @@ public class ModBlocks {
     // Common plants
     public static Block WREATHEN_VINES = cutout(registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES))));
     public static Block WREATHEN_VINES_PLANT = cutout(registerWithoutItem("wreathen_vines_plant", new WreathenVinesBodyBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES_PLANT))));
-    public static Block GOLDSHROOM = cutout(register("goldshroom", new FungusBlock(RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of("huge_red_mushroom")), PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM))));
+    public static Block GOLDSHROOM = cutout(register("goldshroom", new FungusBlock(ModConfiguredFeatures.HUGE_GOLDSHROOM_KEY, PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.WARPED_FUNGUS))));
     public static Block PUTRESCENT_GRASS = cutout(register("putrescent_grass", new ModShortPlantBlock(AbstractBlock.Settings.copy(Blocks.FERN))));
     public static Block TALL_PUTRESCENT_GRASS = cutout(register("tall_putrescent_grass", new ModTallPlantBlock(AbstractBlock.Settings.copy(Blocks.LARGE_FERN).luminance(state -> 5))));
 
