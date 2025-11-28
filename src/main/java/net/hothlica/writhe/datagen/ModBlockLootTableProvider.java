@@ -47,7 +47,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.GOLDSHROOM_BLOCK, mushroomBlockDrops(ModBlocks.GOLDSHROOM_BLOCK, ModBlocks.GOLDSHROOM));
 
         //With shears vs without shears
-        addDrop(ModBlocks.PUTRESCENT_GRASS, dropsWithShears(ModBlocks.PUTRESCENT_GRASS));
+        addDrop(ModBlocks.WREATHEN_GRASS, dropsWithShears(ModBlocks.WREATHEN_GRASS));
+        addDrop(ModBlocks.TALL_WREATHEN_GRASS, dropsWithShears(ModBlocks.WREATHEN_GRASS));
 
         //Others
         addDrop(ModBlocks.WREATHEN_VINES, this::berryshardDrops);

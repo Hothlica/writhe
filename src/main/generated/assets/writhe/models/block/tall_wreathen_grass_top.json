@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "writhe:block/tall_putrescent_grass_bottom"
+    "cross": "writhe:block/tall_wreathen_grass_top"
   }
 }

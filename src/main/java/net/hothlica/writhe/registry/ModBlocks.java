@@ -46,8 +46,8 @@ public class ModBlocks {
     public static Block WREATHEN_VINES = cutout(registerWithoutItem("wreathen_vines", new WreathenVinesHeadBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES))));
     public static Block WREATHEN_VINES_PLANT = cutout(registerWithoutItem("wreathen_vines_plant", new WreathenVinesBodyBlock(AbstractBlock.Settings.copy(Blocks.CAVE_VINES_PLANT))));
     public static Block GOLDSHROOM = cutout(register("goldshroom", new FungusBlock(ModConfiguredFeatures.HUGE_GOLDSHROOM_KEY, PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.WARPED_FUNGUS))));
-    public static Block PUTRESCENT_GRASS = cutout(register("putrescent_grass", new ModShortPlantBlock(AbstractBlock.Settings.copy(Blocks.FERN))));
-    public static Block TALL_PUTRESCENT_GRASS = cutout(register("tall_putrescent_grass", new ModTallPlantBlock(AbstractBlock.Settings.copy(Blocks.LARGE_FERN).luminance(state -> 5))));
+    public static Block WREATHEN_GRASS = cutout(register("wreathen_grass", new ModShortPlantBlock(AbstractBlock.Settings.copy(Blocks.FERN))));
+    public static Block TALL_WREATHEN_GRASS = cutout(register("tall_wreathen_grass", new ModTallPlantBlock(AbstractBlock.Settings.copy(Blocks.LARGE_FERN).luminance(state -> 5))));
 
     // Initialize and register methods
     public static void init(){}

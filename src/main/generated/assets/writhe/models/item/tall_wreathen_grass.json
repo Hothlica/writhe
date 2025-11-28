@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "writhe:block/putrescent_grass"
+    "layer0": "writhe:block/tall_wreathen_grass_top"
   }
 }
