@@ -13,6 +13,8 @@ import net.minecraft.sound.SoundEvents;
 import java.util.ArrayList;
 import java.util.List;
 
+import static net.minecraft.block.Blocks.createFlowerPotBlock;
+
 
 public class ModBlocks {
     //Transparent block list
@@ -48,6 +50,11 @@ public class ModBlocks {
     public static Block GOLDSHROOM = cutout(register("goldshroom", new FungusBlock(ModConfiguredFeatures.HUGE_GOLDSHROOM_KEY, PUTRESCENT_NETHERRACK, AbstractBlock.Settings.copy(Blocks.WARPED_FUNGUS))));
     public static Block WREATHEN_GRASS = cutout(register("wreathen_grass", new ModShortPlantBlock(AbstractBlock.Settings.copy(Blocks.FERN))));
     public static Block TALL_WREATHEN_GRASS = cutout(register("tall_wreathen_grass", new ModTallPlantBlock(AbstractBlock.Settings.copy(Blocks.LARGE_FERN).luminance(state -> 5))));
+    public static Block STILLFLOWER = cutout(register("stillflower", new ModFlowerBlock(ModEffects.ATARAXIA, 15, AbstractBlock.Settings.copy(Blocks.WITHER_ROSE))));
+
+    // Potted
+    public static final Block POTTED_GOLDSHROOM = cutout(register("potted_goldshroom", createFlowerPotBlock(GOLDSHROOM)));
+    public static final Block POTTED_STILLFLOWER = cutout(register("potted_stillflower", createFlowerPotBlock(STILLFLOWER)));
 
     // Initialize and register methods
     public static void init(){}

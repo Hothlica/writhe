@@ -63,6 +63,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MUSHROOM_GROW_BLOCK)
             .add(ModBlocks.PUTRESCENT_NETHERRACK);
 
+        getOrCreateTagBuilder(BlockTags.FLOWERS)
+            .add(ModBlocks.STILLFLOWER);
+
+        getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
+            .add(ModBlocks.STILLFLOWER);
+
         //getOrCreateTagBuilder(BlockTags.REPLACEABLE)
     }
 }
