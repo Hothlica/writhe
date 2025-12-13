@@ -10,7 +10,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 public class ModEffects {
 
-    public static final RegistryEntry<StatusEffect> ROT = register("rot", new RotEffect(StatusEffectCategory.HARMFUL, 9520736));
+    public static final RegistryEntry<StatusEffect> WRITHE = register("writhe", new WritheEffect(StatusEffectCategory.HARMFUL, 9520736));
     public static final RegistryEntry<StatusEffect> ATARAXIA = register("ataraxia", new AtaraxiaEffect(StatusEffectCategory.NEUTRAL, 16109654));
 
     private static RegistryEntry<StatusEffect> register(String id, StatusEffect statusEffect){

@@ -19,12 +19,12 @@ public class ModDamageTypeProvider extends FabricTagProvider<DamageType> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ARMOR)
-                .addOptional(ModDamageTypes.ROT);
+                .addOptional(ModDamageTypes.WRITHE);
         getOrCreateTagBuilder(DamageTypeTags.NO_KNOCKBACK)
-                .addOptional(ModDamageTypes.ROT);
+                .addOptional(ModDamageTypes.WRITHE);
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_COOLDOWN)
-                .addOptional(ModDamageTypes.ROT);
+                .addOptional(ModDamageTypes.WRITHE);
         getOrCreateTagBuilder(ModTags.DamageTypes.HALF_BYPASSES_ENCHANTMENTS)
-                .addOptional(ModDamageTypes.ROT);
+                .addOptional(ModDamageTypes.WRITHE);
     }
 }

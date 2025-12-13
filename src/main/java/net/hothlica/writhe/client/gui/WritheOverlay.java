@@ -11,7 +11,7 @@ import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
-public class RotOverlay implements LayeredDrawer.Layer {
+public class WritheOverlay implements LayeredDrawer.Layer {
 
     private static final Identifier VIGNETTE_TEXTURE = Identifier.ofVanilla("textures/misc/vignette.png");
     private int prevDuration = 0;
@@ -19,10 +19,10 @@ public class RotOverlay implements LayeredDrawer.Layer {
     @Override
     public void render(DrawContext context, RenderTickCounter tickCounter){
         MinecraftClient client = MinecraftClient.getInstance();
-        if (client.player != null && client.player.hasStatusEffect(ModEffects.ROT)) {
-            int currDuration = client.player.getStatusEffect(ModEffects.ROT).getDuration();
-            int rotTicks = client.player.getAttachedOrCreate(ModAttachmentTypes.ROT_TICKS);
-            float opacity = getOpacity(currDuration, rotTicks, 200, 240);
+        if (client.player != null && client.player.hasStatusEffect(ModEffects.WRITHE)) {
+            int currDuration = client.player.getStatusEffect(ModEffects.WRITHE).getDuration();
+            int writheTicks = client.player.getAttachedOrCreate(ModAttachmentTypes.WRITHE_TICKS);
+            float opacity = getOpacity(currDuration, writheTicks, 200, 240);
             renderOverlay(context, opacity);
             //client.player.sendMessage(Text.literal(String.valueOf(opacity)));
         }
@@ -53,12 +53,12 @@ public class RotOverlay implements LayeredDrawer.Layer {
         RenderSystem.disableBlend();
     }
 
-    private float getOpacity(int currDuration, int rotTicks, int fadeInTicks, int fadeOut) {
+    private float getOpacity(int currDuration, int writheTicks, int fadeInTicks, int fadeOut) {
         if (currDuration == -1) currDuration = fadeOut;
-        if (rotTicks > 0 && currDuration > prevDuration) currDuration = prevDuration + 1;
+        if (writheTicks > 0 && currDuration > prevDuration) currDuration = prevDuration + 1;
         //Results in 0f-1f
         float fadeOutMultiplier = Math.min((float) currDuration / fadeOut, 1f);
         prevDuration = currDuration;
-        return Math.min(rotTicks * fadeOutMultiplier / fadeInTicks, 1f);
+        return Math.min(writheTicks * fadeOutMultiplier / fadeInTicks, 1f);
     }
 }

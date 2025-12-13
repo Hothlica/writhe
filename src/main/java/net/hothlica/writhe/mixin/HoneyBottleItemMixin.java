@@ -1,7 +1,7 @@
 package net.hothlica.writhe.mixin;
 
 import net.hothlica.writhe.registry.ModEffects;
-import net.hothlica.writhe.effect.RotEffect;
+import net.hothlica.writhe.effect.WritheEffect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.HoneyBottleItem;
 import net.minecraft.item.ItemStack;
@@ -14,9 +14,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(HoneyBottleItem.class)
 public abstract class HoneyBottleItemMixin {
     @Inject(method = "finishUsing", at = @At("HEAD"))
-    private void lessenRotTime(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
-        if (!world.isClient() && user.hasStatusEffect(ModEffects.ROT)) {
-            RotEffect.reduceRotTIme(user, 300);
+    private void lessenWritheTime(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
+        if (!world.isClient() && user.hasStatusEffect(ModEffects.WRITHE)) {
+            WritheEffect.reduceWritheTime(user, 300);
         }
     }
 }

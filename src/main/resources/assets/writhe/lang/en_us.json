@@ -28,8 +28,8 @@
 
   "subtitles.writhe.stepping_stone_use": "Stepping Stone used",
 
-  "effect.writhe.rot": "Rot",
+  "effect.writhe.writhe": "Writhe",
   "effect.writhe.ataraxia": "Ataraxia",
 
-  "death.attack.rot": "%1$s rotted away"
+  "death.attack.writhe": "%1$s was torn apart"
 }

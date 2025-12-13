@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 @SuppressWarnings("UnstableApiUsage")
 public class ModAttachmentTypes {
 
-    public static final AttachmentType<Integer> ROT_TICKS = register("rot_ticks", builder -> builder.initializer(() -> 0).persistent(Codecs.NONNEGATIVE_INT).syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.targetOnly()));
+    public static final AttachmentType<Integer> WRITHE_TICKS = register("writhe_ticks", builder -> builder.initializer(() -> 0).persistent(Codecs.NONNEGATIVE_INT).syncWith(PacketCodecs.codec(Codecs.NONNEGATIVE_INT), AttachmentSyncPredicate.targetOnly()));
 
     private static <A> AttachmentType<A> register (String id, Consumer<AttachmentRegistry.Builder<A>> consumer) {
         AttachmentRegistry.Builder<A> builder = AttachmentRegistryImpl.builder();

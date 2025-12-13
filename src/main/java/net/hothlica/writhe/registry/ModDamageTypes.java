@@ -11,7 +11,7 @@ public class ModDamageTypes {
 
     public static void init(){}
 
-    public static final RegistryKey<DamageType> ROT = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Writhe.id("rot"));
+    public static final RegistryKey<DamageType> WRITHE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Writhe.id("writhe"));
 
     public static DamageSource create(LivingEntity entity, RegistryKey<DamageType> key) {
         return new DamageSource(entity.getWorld().getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(key));
